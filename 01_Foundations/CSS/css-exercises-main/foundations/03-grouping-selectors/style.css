@@ -1,0 +1,26 @@
+/* - **The first element**: a black background and white text <br>
+      - **The second element**: a yellow background <br>
+      - **Both elements**: a font size of 28px and a list of fonts containing `Helvetica` and `Times New Roman`, with
+      `sans-serif` as a fallback <br>
+      <br>
+      ### Self Check <br>
+      <br>
+      - Does each element have a unique class name? <br>
+      - Did you use the grouping selector for styles that both elements share? <br>
+      - Did you make separate rules for the styles unique to each element? <br>
+      <br> */
+
+.btn02 {
+	background-color: #ff0;
+}
+
+.btn01 {
+	background-color: #000;
+	color: #fff;
+}
+
+.btn01,
+.btn02 {
+	font-size: 28px;
+	font-family: Helvetica, "Times New Roman", sans-serif;
+}
