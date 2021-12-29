@@ -1,0 +1,56 @@
+usedColors {
+	color: #00a70e;
+	color: #006809;
+	color: #ff0000;
+	color: #7c0000;
+}
+
+body {
+	background-color: #faedb7;
+}
+
+.display {
+	display: none;
+}
+.explain:hover {
+	cursor: zoom-in;
+}
+
+#exampleModal img {
+	width: 100% !important;
+	background-color: #faedb7;
+	border-radius: 5%;
+	box-shadow: 10px 10px 100px #000;
+}
+
+.selected {
+	width: 160px;
+	height: 160px;
+	border: 2px solid #000;
+	text-align: center;
+}
+
+/* ensures the increment/decrement arrows always display */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	opacity: 1;
+}
+
+input {
+	margin: 0 auto;
+}
+
+button:hover {
+	color: #000 !important;
+	font-weight: 900;
+}
+
+.aw-75 {
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+}
+
+object {
+	pointer-events: none;
+}

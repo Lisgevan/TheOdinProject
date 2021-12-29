@@ -22,102 +22,159 @@
 // Spock vaporizes rock,
 
 //Games choices
-const choices = ["rock", "paper", "scissors", "lizard", "spock", "q"];
+const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+
+const winScore = document.querySelector("#winScore");
+const startGame = document.querySelector("#start");
+const stopGame = document.querySelector("#stop");
+const scoreSection = document.querySelector("#scoreSection");
+const selectScore1 = document.querySelector("#selectScore1");
+const selectScore2 = document.querySelector("#selectScore2");
+const selectionButtons = document.querySelector("#selectButtons");
+const js_buttons = document.querySelectorAll(".js_buttons");
+const js_player = document.querySelector(".js_player");
+const js_computer = document.querySelector(".js_computer");
+const js_playerCount = document.querySelector(".js_playerCount");
+const js_computerCount = document.querySelector(".js_computerCount");
+const js_scoreMSG = document.querySelector(".js_scoreMSG");
+
+let roundsToWin = +winScore.value;
+let computerCount = 0;
+let playerCount = 0;
+let computerSelection;
+let playerSelection;
 
 //Computer's random choice
 const computerChoice = () => choices[Math.floor(Math.random() * 5)];
 
-//players choice
-const playerChoice = () => {
-	let playerChoice = prompt("Please select one of: Rock, Paper, Scissors, Lizard, Spock.");
-	while (!choices.includes(playerChoice.toLowerCase())) {
-		console.log("Invalid input, please try again or type q to quit.");
-		playerChoice = prompt("Please select one of: Rock, Paper, Scissors, Lizard, Spock.");
+startGame.addEventListener("click", e => {
+	roundsToWin = +winScore.value;
+	computerCount = 0;
+	playerCount = 0;
+	selectionButtons.classList.remove("d-none");
+	scoreSection.classList.remove("d-none");
+	selectScore1.classList.add("d-none");
+	selectScore2.classList.remove("d-none");
+	selectScore2.innerText = `Playing to ${roundsToWin}`;
+	js_playerCount.innerText = `${playerCount}`;
+	js_computerCount.innerText = `${computerCount}`;
+	js_scoreMSG.innerText = "";
+	js_player.innerHTML = ``;
+	js_computer.innerHTML = ``;
+	window.scrollTo(0, document.body.scrollHeight);
+});
+
+stopGame.addEventListener("click", e => {
+	computerCount = 0;
+	playerCount = 0;
+	selectionButtons.classList.add("d-none");
+	scoreSection.classList.add("d-none");
+	selectScore1.classList.remove("d-none");
+	selectScore2.classList.add("d-none");
+	js_player.innerHTML = ``;
+	js_computer.innerHTML = ``;
+	js_scoreMSG.innerText = "";
+});
+
+js_buttons.forEach(button => {
+	button.addEventListener("click", e => {
+		computerSelection = computerChoice();
+		playerSelection = button.value;
+		js_player.innerHTML = `<object data="./images/${button.value}Black.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`;
+		js_computer.innerHTML = ``;
+		playTheGame(playerSelection, computerSelection);
+	});
+});
+
+const updateSelection = (playerSelection, computerSelection) => {
+	if (playerSelection === computerSelection) {
+		return (
+			(js_player.innerHTML = `<object data="./images/${playerSelection}Black.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`),
+			(js_computer.innerHTML = `<object data="./images/${computerSelection}Black.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`),
+			(js_scoreMSG.innerText = "We have a tie.")
+		);
+	} else {
+		return (
+			(js_player.innerHTML = `<object data="./images/${playerSelection}Red.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`),
+			(js_computer.innerHTML = `<object data="./images/${computerSelection}Green.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`),
+			(js_scoreMSG.innerText = "Computer wins.")
+		);
 	}
-	return playerChoice.toLowerCase();
 };
 
-//run the game
-const playTheGame = () => {
-	//ask how many rounds you have to win to end the game
-	let roundsToWin = prompt("How many winning rounds end the game (type q to quit)? ");
-
-	let computerCount = 0;
-	let playerCount = 0;
-
-	const playerSelection = " ";
-
-	while (
-		computerCount !== roundsToWin &&
-		playerCount !== roundsToWin &&
-		playerSelection !== "q" &&
-		roundsToWin !== "q"
-	) {
-		roundsToWin = +roundsToWin;
-		const computerSelection = computerChoice();
-		// console.log("in: ", computerSelection);
-		const playerSelection = playerChoice();
-		// console.log("in: ", playerSelection);
-
-		switch (true) {
-			case computerSelection === playerSelection:
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("We have a tie.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case computerSelection === "rock" && (playerSelection === "scissors" || playerSelection === "lizard"):
-				computerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("You loose.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case computerSelection === "paper" && (playerSelection === "rock" || playerSelection === "spock"):
-				computerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("You loose.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case computerSelection === "scissors" && (playerSelection === "paper" || playerSelection === "lizard"):
-				computerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("You loose.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case computerSelection === "lizard" && (playerSelection === "paper" || playerSelection === "spock"):
-				computerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("You loose.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case computerSelection === "spock" && (playerSelection === "scissors" || playerSelection === "rock"):
-				computerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("You loose.");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
-				break;
-
-			case playerSelection === "q":
-				return console.log('Thank you for playing "Rock - Paper - Scissors - Lizard - Spock"');
-
-			default:
-				playerCount++;
-				console.log(`Computer selected ${computerSelection} and you selected ${playerSelection}`);
-				console.log("YOU WIN!!! Well Done!!!");
-				console.log(`The score is copmuter ${computerCount} - ${playerCount} player`);
+const checkGameOver = (computerCount, playerCount, roundsToWin) => {
+	if (computerCount === roundsToWin || playerCount === roundsToWin) {
+		selectScore1.classList.remove("d-none");
+		selectScore2.classList.add("d-none");
+		selectionButtons.classList.add("d-none");
+		scoreSection.classList.add("d-none");
+		if (computerCount === roundsToWin) {
+			js_scoreMSG.innerText = `GAME OVER! Computer wins ${computerCount} to ${playerCount}.`;
+		} else if (playerCount === roundsToWin) {
+			js_scoreMSG.innerText = `GAME OVER! YOU WIN ${playerCount} to ${computerCount}!`;
 		}
 	}
+	return;
+};
 
-	if (computerCount > playerCount && playerSelection !== "q") {
-		console.log(`GAME OVER!!! Computer wins ${computerCount} to ${playerCount}`);
-	} else if (computerCount < playerCount && playerSelection !== "q") {
-		console.log(`GAME OVER!!! Player wins ${playerCount} to ${computerCount}`);
-	} else if (playerSelection === "q") {
-		console.log('Thank you for playing "Rock - Paper - Scissors - Lizard - Spock"');
+//----------------------------//
+const playTheGame = (playerSelection, computerSelection) => {
+	switch (true) {
+		case computerSelection === playerSelection:
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		case computerSelection === "rock" && (playerSelection === "scissors" || playerSelection === "lizard"):
+			++computerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		case computerSelection === "paper" && (playerSelection === "rock" || playerSelection === "spock"):
+			++computerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		case computerSelection === "scissors" && (playerSelection === "paper" || playerSelection === "lizard"):
+			++computerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		case computerSelection === "lizard" && (playerSelection === "paper" || playerSelection === "spock"):
+			++computerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		case computerSelection === "spock" && (playerSelection === "scissors" || playerSelection === "rock"):
+			++computerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			updateSelection(playerSelection, computerSelection);
+			checkGameOver(computerCount, playerCount, roundsToWin);
+			break;
+
+		default:
+			++playerCount;
+			js_playerCount.innerText = `${playerCount}`;
+			js_computerCount.innerText = `${computerCount}`;
+			js_player.innerHTML = `<object data="./images/${playerSelection}Green.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`;
+			js_computer.innerHTML = `<object data="./images/${computerSelection}Red.svg" class="w-100 h-100 p-2" name="rockBlack">{" "}</object>`;
+			js_scoreMSG.innerText = "You win. Well done.";
+			checkGameOver(computerCount, playerCount, roundsToWin);
 	}
 };
 

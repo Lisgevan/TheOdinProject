@@ -5,11 +5,153 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+
         <title>Rock Paper Scissors V2</title>
     </head>
 
     <body>
-        <h1>Rock - Paper - Scissors</h1>
+        <header class="text-center">
+            <img src="./images/header.png" alt="" class="w-75 h-auto">
+            <div class="d-flex justify-content-center">
+                <!-- Button trigger modal -->
+                <img src="./images/explainGame.png" alt=""
+                     class="w-25 h-auto explain" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1"
+                     aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-transparent border-0">
+                            <!-- <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                
+                            </div> -->
+                            <div class="modal-body">
+                                <button type="button" class="btn-close bg-light float-end" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                <img src="./images/explainGame.png" alt=""
+                                     class="w-25 h-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Selection display section -->
+        <section class="container">
+            <div class="d-flex justify-content-evenly mt-5 row">
+                <div class="flex-column mb-5 text-center col-12 col-md-4 order-md-1 order-sm-2">
+                    <h2 class="fs-1 fw-bolder text-center">PLAYER</h2>
+                    <div class="selected js_player d-inline-block">
+                    </div>
+                </div>
+                <div class="d-flex flex-column mb-5 col-12 col-md-4 order-md-2 order-sm-1">
+                    <div id="selectScore1" class="text-center">
+                        <p class="fs-5 fw-bolder">Select winning score:</p>
+                        <input class="w-25 text-center bg-transparent" type="number" name="winScore" id="winScore"
+                               min="1"
+                               value="1">
+                    </div>
+                    <div class="text-center">
+                        <p id="selectScore2" class="d-none fs-3 fw-bolder"></p>
+                    </div>
+                    <div class="d-flex justify-content-center text-center mt-3">
+                        <div id="start">
+                            <object data="./images/start.svg" width="75" height="75"> </object>
+                        </div>
+                        <div id="stop">
+                            <object data="./images/stop.svg" width="75" height="75" id="stop"> </object>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-column mb-5 text-center col-12 col-md-4 order-md-3 order-sm-3">
+                    <h2 class="fs-1 fw-bolder text-center">COMPUTER</h2>
+                    <div class="selected js_computer d-inline-block">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Score display section -->
+        <h2 class="m-0 text-center js_scoreMSG"></h2>
+        <section id='scoreSection' class="text-center d-none">
+            <div>
+                <span class="fs-3 m-0 fw-bolder">PLAYER: </span>
+                <span class="fs-1 m-0 fw-bolder js_playerCount"></span>
+                <span class="fs-1 m-0 fw-bolder">-</span>
+                <span class="fs-3 m-0 fw-bolder"> COMPUTER: </span>
+                <span class="fs-1 m-0 fw-bolder js_computerCount"></span>
+            </div>
+        </section>
+
+        <!-- Player's selection buttons -->
+        <section id="selectButtons" class="my-3 d-none container">
+            <h2 class="text-center">SELECT YOUR MOVE</h2>
+            <div class="d-flex row justify-content-center">
+                <button class="btn btn-outline-secondary aw-75 m-3 js_buttons" value="rock">
+                    <object data="./images/rock2.svg" class="w-75 h-100"></object>
+                    SELECT_ROCK
+                </button>
+                <button class="btn btn-outline-secondary aw-75 m-3 js_buttons" value="paper">
+                    <object data="./images/paper2.svg" class="w-75 h-100"> </object>
+                    SELECT_PAPER
+                </button>
+                <button class=" btn btn-outline-secondary aw-75 m-3 js_buttons" value="scissors">
+                    <object data="./images/scissors2.svg" class="w-75 h-100"> </object>
+                    SELECT_SCISSORS
+                </button>
+                <button class="btn btn-outline-secondary aw-75 m-3 js_buttons" value="lizard">
+                    <object data="./images/lizard2.svg" class="w-75 h-100"> </object>
+                    SELECT_LIZARD
+                </button>
+                <button class="btn btn-outline-secondary aw-75 m-3 js_buttons" value="spock">
+                    <object data="./images/spock2.svg" class="w-75 h-100"> </object>
+                    SELECT_SPOCK
+                </button>
+            </div>
+        </section>
+
+        <!-- <object data="./images/start.svg" width="100" height="100" name="spockRed"> </object>
+        <object data="./images/stop.svg" width="100" height="100" name="spockGreen"> </object> -->
+
+
+        <!-- 
+        <object data=" ./images/rockRed.svg" class="w-100 h-100 p-2" name="rockRed"> </object>
+        <object data="./images/rockGreen.svg" class="w-100 h-100 p-2" name="rockGreen"> </object>
+        <object data="./images/rockBlack.svg" class="w-100 h-100 p-2" name="rockBlack"> </object>
+
+        <object data="./images/paperRed.svg" class="w-100 h-100 p-2" name="paperRed"> </object>
+        <object data="./images/paperGreen.svg" class="w-100 h-100 p-2" name="paperGreen"> </object>
+        <object data="./images/paperBlack.svg" class="w-100 h-100 p-2" name="paperBlack"> </object>
+
+        <object data="./images/scissorsRed.svg" class="w-100 h-100 p-2" name="scissorsRed"> </object>
+        <object data="./images/scissorsGreen.svg" class="w-100 h-100 p-2" name="scissorsGreen"> </object>
+        <object data="./images/scissorsBlack.svg" class="w-100 h-100 p-2" name="scissorsBlack"> </object>
+
+        <object data="./images/lizardRed.svg" class="w-100 h-100 p-2" name="lizardRed"> </object>
+        <object data="./images/lizardGreen.svg" class="w-100 h-100 p-2" name="lizardGreen"> </object>
+        <object data="./images/lizardBlack.svg" class="w-100 h-100 p-2" name="lizardBlack"> </object>
+
+        <object data="./images/spockRed.svg" class="w-100 h-100 p-2" name="spockRed"> </object>
+        <object data="./images/spockGreen.svg" class="w-100 h-100 p-2" name="spockGreen"> </object>
+        <object data="./images/spockBlack.svg" class="w-100 h-100 p-2" name="spockBlack"> </object> -->
+
+
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
 
         <script src="./script.js"></script>
     </body>
