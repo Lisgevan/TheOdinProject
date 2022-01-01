@@ -74,6 +74,7 @@ stopGame.addEventListener("click", e => {
 	js_player.innerHTML = ``;
 	js_computer.innerHTML = ``;
 	js_scoreMSG.innerText = "";
+	winScore.value = 1;
 });
 
 js_buttons.forEach(button => {
