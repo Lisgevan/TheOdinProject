@@ -1,29 +1,17 @@
-let strArray = ["ram", "shyam", "shashi", "bhushan", "india"];
+// // WRITE YOUR CODE IN HERE:
+// const li = document.querySelectorAll("li");
 
-const convStrArray = [];
-const title = str => {
-	let i = 0;
-	for (let i = 0; i <= strArray.length; i++) {
-		let strn = str.toString();
-		// console.log(strn);
-		convStrArray.push(strn);
-		console.log(
-			strn.replace(/\w\S*/g, txt => {
-				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-			})
-		);
+// for (let item of li) {
+// 	item.classList.toggle("highlight");
+// }
+// // li.forEach(li=&gt;li.classList.toggle('highlight'))
+
+const lis = document.querySelectorAll("li");
+for (let li of lis) {
+	console.log(li.classList.contains("highlight"));
+	if (li.classList.contains("highlight")) {
+		li.classList.remove("highlight");
+	} else {
+		li.classList.add("highlight");
 	}
-	i++;
-};
-
-// const title = array => {
-// 	const newArray = array.reduce((acc, item) => {
-// 		let letters = item.split("");
-// 		letters[0] = letters[0].toUpperCase();
-// 		return acc.concat(letters.join(""));
-// 	}, []);
-// 	return newArray;
-// };
-
-console.log(title(strArray));
-// console.log(convStrArray);
+}
