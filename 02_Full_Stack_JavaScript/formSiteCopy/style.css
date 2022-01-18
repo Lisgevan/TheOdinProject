@@ -1,0 +1,157 @@
+body {
+	height: 100vh;
+	background-color: #eceef1;
+}
+
+/* HEADER */
+header {
+	margin: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+header p,
+header a {
+	margin: 0px;
+	margin-right: 10px;
+	font-size: 0.8em;
+}
+header button {
+	background-color: #0077c5;
+	color: #fff;
+	border: 1px solid #4c4c4c;
+	border-radius: 4px;
+	padding: 0 20px;
+	height: 34px;
+	cursor: pointer;
+}
+/* END OF HEADER */
+
+/* LOGO SECTION */
+#logo {
+	background-image: url(./images/ecosystem_logos_new-0b45bf36..png);
+	width: 115px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+p {
+	display: flex;
+	justify-content: center;
+}
+.spanIcon {
+	width: 23px;
+	height: 23px;
+	background-repeat: no-repeat;
+	margin-left: 10px;
+	align-self: center;
+	justify-self: center;
+}
+.spanText {
+	width: 100px;
+	height: 23px;
+	background-repeat: no-repeat;
+	margin-right: 0px;
+	align-self: center;
+	justify-self: center;
+}
+/* END OF LOGO SECTION */
+
+/* FORM SECTION */
+form {
+	display: flex;
+	flex-direction: column;
+	width: 30vw;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 2px solid #dcdcdc;
+	border-bottom: none;
+	padding: 30px 30px 0;
+	color: #756f6f;
+}
+fieldset {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+legend {
+	text-align: center;
+}
+fieldset p {
+	margin: 10px auto;
+	width: 80%;
+	text-align: center;
+	font-size: 0.9em;
+	display: block;
+}
+label,
+input {
+	margin: 0 5px;
+}
+input {
+	margin-bottom: 10px;
+	border: 2px solid #c9cccf;
+}
+#note {
+	font-size: smaller;
+	margin: 0;
+	margin-bottom: 10px;
+}
+[type="tel"] {
+	margin-bottom: 0;
+}
+form button {
+	padding: 10px;
+	margin-bottom: 20px;
+	background-color: #0077c5;
+	color: #fff;
+	border: 2px solid #756f6f;
+	border-radius: 4px;
+}
+#terms {
+	font-size: smaller;
+	font-style: italic;
+	text-align: center;
+	display: block;
+}
+#captcha {
+	width: 30vw;
+	height: 5em;
+	margin: auto;
+	border: 2px solid #dcdcdc;
+	border-top: none;
+	background-color: #eceef1;
+	font-size: x-small;
+	line-height: 5em;
+	text-align: center;
+	color: #756f6f;
+}
+/* END OF FORM SECTION */
+
+/* UNDER FORM SECTION */
+#bottom a {
+	margin-top: 20px;
+	margin-right: 10px;
+	color: #535353;
+	text-decoration: none;
+}
+#bottom a:hover {
+	text-decoration: underline;
+}
+#bottom p {
+	margin-bottom: 0;
+	font-size: smaller;
+	color: #535353;
+}
+/* END OF UNDER FORM SECTION */
+
+/* FOOTER */
+footer {
+	width: 100%;
+	height: 4em;
+	margin-top: 80px;
+	background-color: #fff;
+	line-height: 4em;
+	padding-left: 20px;
+	font-size: smaller;
+}
+/* END OF FOOTER */
