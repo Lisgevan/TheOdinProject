@@ -19,9 +19,17 @@
       <button>🔽</button>
     </div>
 
+    <!-- flexbox is better for this one -->
     <style>
       .controls {
         margin: 200px 0;
+        /* with flex
+        display: flex;
+        align-items: center; */
+        /* with grid */
+        display: grid;
+        grid-template-columns: auto auto auto 1fr auto auto;
+        align-items: center;
       }
 
       .scrubber {
@@ -29,6 +37,8 @@
         height: 10px;
         min-width: 100px;
         border-radius: 10px;
+        /* with flex
+        flex: 1; */
       }
     </style>
 

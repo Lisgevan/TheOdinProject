@@ -8,6 +8,8 @@
     <title>Flexbox vs CSS Grid: Stacked Layout!</title>
   </head>
 
+  <!-- only with flexbox -->
+
   <body>
     <!-- Stacked Layout -->
     <div class="stacked">
@@ -19,7 +21,11 @@
     </div>
 
     <style>
-      .stacked {}
+      .stacked {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
 
       .stacked>* {
         width: 30%;
