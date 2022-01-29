@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Other controls 2</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Other_controls#other_controls_2">
+            <h1>Other controls 2</h1>
+        </a>
+
+        <p>Now it's time to have a go at implementing a drop-down select menu, to allow a user to pick their favourite
+            food from the choices provided..</p>
+
+        <ol>
+            <li>Create your basic select box structure.</li>
+            <li>Associate it semantically with the provided "food" label.</li>
+            <li>Inside the list, split the choices up into 2 subgroups — "mains" and "snacks".</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <ul>
+                <li>
+                    <label for="food">Pick your favorite food:</label>
+                    <select name="food" id="food">
+                        <option value="blanc">Select</option>
+                        <optgroup label="mains">
+                            <option value="mains">Salad</option>
+                            <option value="mains">Curry</option>
+                            <option value="mains">Pizza</option>
+                            <option value="mains">Fajitas</option>
+                        </optgroup>
+                        <optgroup label="snacks">
+                            <option value="snacks">Biscuits</option>
+                            <option value="snacks">Crisps</option>
+                            <option value="snacks">Fruit</option>
+                            <option value="snacks">Breadsticks</option>
+                        </optgroup>
+
+                    </select>
+                </li>
+                <li>
+                    <button>Submit choice</button>
+                </li>
+            </ul>
+        </form>
+
+        <script>
+            const invite = document.querySelector( '#max-invite' );
+            const output = document.querySelector( '.invite-output' );
+
+            output.textContent = invite.value;
+
+            invite.addEventListener( 'input', function () {
+                output.textContent = invite.value;
+            } );
+        </script>
+    </body>
+
+</html>

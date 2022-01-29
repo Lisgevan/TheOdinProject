@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Styling basics 1</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Styling_basics#styling_basics_1">
+            <h1>Styling basics 1</h1>
+        </a>
+
+        <p>Our basic form styling assessment is fairly free-form, and you have a lot of flexibility over what you end up
+            doing here. But your CSS should aim to fulfill the following requirements:</p>
+
+        <ol>
+            <li>Add some kind of lightweight "reset" to make fonts, padding, margin, and sizing more consistent to begin
+                with.</li>
+            <li>On top of that, add in some nice, consistent styling for the inputs and button.</li>
+            <li> Use some kind of layout technique to make the inputs and labels line up neatly.</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <h2>Edit your preferences</h2>
+            <div class="main">
+                <div class='inputs'>
+                    <label for="e-mail">Email:</label>
+                    <input type="email" id="e-mail" name="e-mail">
+                </div>
+                <div class='inputs'>
+                    <label for="website">Website:</label>
+                    <input type="url" id="website" name="website">
+                </div>
+                <div class='inputs'>
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class='inputs'>
+                    <label for="food">Favorite food:</label>
+                    <select name="food" id="food">
+                        <option>Salad</option>
+                        <option>Curry</option>
+                        <option>Pizza</option>
+                        <option>Fajitas</option>
+                    </select>
+                </div>
+                <div class="submit">
+                    <button>Update preferences</button>
+                </div>
+            </div>
+        </form>
+
+    </body>
+
+</html>

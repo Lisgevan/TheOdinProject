@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Other controls 1</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Other_controls#other_controls_1">
+            <h1>Other controls 1</h1>
+        </a>
+
+        <p>In our first "other controls" assessment, we'll get you to create a multi-line text input.</p>
+
+        <ol>
+            <li>Create a basic multi-line text input.</li>
+            <li>Associate it semantically with the provided "Comment" label.</li>
+            <li>Give the input 35 columns, and 10 rows of space in which to add comments.</li>
+            <li>Give the comments a maximum length of 100 characters.</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <h2>Enter your comment</h2>
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+                </li>
+                <li>
+                    <label for="comment">Comment:</label>
+                    <!-- add your input here  -->
+                    <br>
+                    <textarea name="comment" id="comment" cols="35" rows="10" maxlength="100"></textarea>
+                </li>
+                <li>
+                    <button>Submit comment</button>
+                </li>
+            </ul>
+        </form>
+
+        <script>
+            const invite = document.querySelector( '#max-invite' );
+            const output = document.querySelector( '.invite-output' );
+
+            output.textContent = invite.value;
+
+            invite.addEventListener( 'input', function () {
+                output.textContent = invite.value;
+            } );
+        </script>
+    </body>
+
+</html>

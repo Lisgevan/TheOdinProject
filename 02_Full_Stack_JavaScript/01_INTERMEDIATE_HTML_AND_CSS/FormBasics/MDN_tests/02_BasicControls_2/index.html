@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Basic controls 2</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Basic_controls#basic_controls_2">
+            <h1>Basic controls 2</h1>
+        </a>
+
+        <p>The next task requires you to create working sets of checkboxes and radio buttons, from the provided text
+            labels.</p>
+
+        <ol>
+            <li>Turn the first <code>&lt;fieldset&gt;'s</code> contents into a set of radio buttons — you should only be
+                able to select one pony character at once.</li>
+            <li> Make it so that the first radio button is selected upon page load.</li>
+            <li> Turn the second <code>&lt;fieldset&gt;'s</code> content into a set of checkboxes.</li>
+            <li> Add a couple more hotdog choices of your own.</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <fieldset>
+                <legend>Who is your favorite pony?</legend>
+                <input type="radio" name="ponies" id="pinkie" checked>
+                <label for="pinkie">Pinkie Pie</label>
+                <br>
+                <input type="radio" name="ponies" id="rainbow">
+                <label for="rainbow">Rainbow Dash</label>
+                <br>
+                <input type="radio" name="ponies" id="twilight">
+                <label for="twilight">Twilight Sparkle</label>
+            </fieldset>
+            <fieldset>
+                <legend>Hotdog preferences</legend>
+                <input type="checkbox" name="hotdogs" id="vegan">
+                <label for="vegan">Vegan</label>
+                <br>
+                <input type="checkbox" name="hotdogs" id="onions">
+                <label for="onions">Onions</label>
+                <br>
+                <input type="checkbox" name="hotdogs" id="clasic">
+                <label for="clasic">Clasic</label>
+                <br>
+                <input type="checkbox" name="hotdogs" id="extrahot">
+                <label for="extrahot">Extra hot</label>
+            </fieldset>
+            <button>Submit</button>
+        </form>
+
+    </body>
+
+</html>

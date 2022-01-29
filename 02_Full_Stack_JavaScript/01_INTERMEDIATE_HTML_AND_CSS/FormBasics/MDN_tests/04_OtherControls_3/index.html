@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Other controls 3</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Other_controls#other_controls_2">
+            <h1>Other controls 3</h1>
+        </a>
+
+        <p>In our final task of this set, we start with much the same list of food choices. However, this time we want
+            to do things
+            differently:</p>
+
+        <ol>
+            <li>Create a basic text input that is semantically associated with the provided label.</li>
+            <li>Put the food choices into a list that can be associated with a form input.</li>
+            <li>Associate the list with your text input, so that when you type characters, any of the list options that
+                match the character sequence are given in a dropdown list as autocomplete suggestions.</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <ul>
+                <li>
+                    <label for="food">Enter your favorite food:</label>
+                    <input type="text" name="foods" id="food" list="mySuggestion">
+                    <datalist id="mySuggestion">
+                        <option>Salad</option>
+                        <option>Curry</option>
+                        <option>Pizza</option>
+                        <option>Fajitas</option>
+                        <option>Biscuits</option>
+                        <option>Crisps</option>
+                        <option>Fruit</option>
+                        <option>Breadsticks</option>
+                    </datalist>
+                </li>
+                <li>
+                    <button>Submit choice</button>
+                </li>
+            </ul>
+        </form>
+
+        <script>
+            const invite = document.querySelector( '#max-invite' );
+            const output = document.querySelector( '.invite-output' );
+
+            output.textContent = invite.value;
+
+            invite.addEventListener( 'input', function () {
+                output.textContent = invite.value;
+            } );
+        </script>
+    </body>
+
+</html>

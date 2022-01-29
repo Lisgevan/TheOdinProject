@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>HTML5 controls 2</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_HTML5_controls#html5_controls_1">
+            <h1>HTML5 controls 2</h1>
+        </a>
+
+        <p>Next, we want you to implement a slider control to allow the user to choose a maximum number of people to
+            invite to their party.</p>
+
+        <ol>
+            <li>Implement a basic slider control to go along with the provided label.</li>
+            <li>Give it a minimum value of 1, maximum value of 30, initial value of 10 and element id of max-invite.
+            </li>
+            <li>Create a corresponding output element to put the current value of the slider into. Give it a class of
+                invite-output, and semantically associate it with the input. If you do this correctly, the JavaScript
+                included on the page will automatically update the output value when the slider is moved.</li>
+        </ol>
+
+        <hr>
+
+
+        <form>
+            <ul>
+                <li>
+                    <label for="max-invite">Select maximum number of invitations</label>
+                    <input type="range" name="max-invite1" id="max-invite" min="1" max="30" value="10">
+                    <output class="invite-output" for="max-invite1"></output>
+                </li>
+                <li>
+                    <button>Submit</button>
+                </li>
+            </ul>
+        </form>
+
+        <script>
+            const invite = document.querySelector( '#max-invite' );
+            const output = document.querySelector( '.invite-output' );
+
+            output.textContent = invite.value;
+
+            invite.addEventListener( 'input', function () {
+                output.textContent = invite.value;
+            } );
+        </script>
+    </body>
+
+</html>
