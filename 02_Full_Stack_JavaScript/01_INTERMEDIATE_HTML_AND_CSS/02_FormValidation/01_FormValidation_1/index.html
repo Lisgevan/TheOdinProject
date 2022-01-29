@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Form validation 1</title>
+    </head>
+
+    <body>
+        <a
+           href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Test_your_skills:_Form_validation#form_validation_1">
+            <h1>Form validation 1</h1>
+        </a>
+
+        <p>In this task, we are providing you with a simple support query form, and we want you to add some validation
+            features to it:</p>
+
+        <ol>
+            <li>Make all of the input fields mandatory to complete before the form can be submitted.</li>
+            <li>Change the type of the "Email address" and "Phone number" fields to make the browser apply some more
+                specific validation suitable for the data being asked for.</li>
+            <li> Give the "User name" field a required length of between 5 and 20 characters, the "Phone number" field a
+                maximum length of 15 characters, and the "Comment" field a maximum length of 200 characters.</li>
+        </ol>
+
+        <br>
+        <hr>
+        <br>
+
+
+        <form>
+            <h2>Enter your support query</h2>
+            <ul>
+                <li>
+                    <label for="username">User name:<sup>*</sup></label>
+                    <input type="text" name="uname" id="username" minlength="5" maxlength="20" required>
+                </li>
+                <li>
+                    <label for="email">Email address:<sup>*</sup></label>
+                    <input type="email" name="email" id="email" required>
+                </li>
+                <li>
+                    <label for="phone">Phone number:<sup>*</sup></label>
+                    <input type="tel" name="phone" id="phone" maxlength="15" required>
+                </li>
+                <li>
+                    <label for="comment">Comment:<sup>*</sup></label>
+                    <textarea name="comment" id="comment" maxlength="200" required></textarea>
+                </li>
+                <li>
+                    <button>Submit comment</button>
+                </li>
+            </ul>
+        </form>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>
