@@ -1,0 +1,195 @@
+@font-face {
+	font-family: Norse-Bold;
+	src: local("Norse-Bold"), url(./assets/Norse-Bold.otf);
+	font-weight: bold;
+}
+
+:root {
+	--create-account: #596d48;
+	--input-border: #e5e7eb;
+	--form-bg: #f9fafb;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: #000;
+	display: grid;
+}
+
+.wrapper {
+	width: 75%;
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	justify-self: center;
+}
+
+.hide {
+	z-index: -9999999;
+}
+
+/* right side CSS */
+main {
+	margin: 0 auto;
+	background: var(--form-bg);
+	font-family: Arial, Helvetica, sans-serif;
+	display: grid;
+	grid-template-rows: repeat(1fr 2fr);
+}
+
+#top {
+	font-size: 1.1rem;
+	font-weight: 600;
+	align-self: center;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	display: grid;
+	grid-gap: 2vw;
+}
+
+#inputs {
+	width: 75%;
+	display: grid;
+	grid-gap: 2vw;
+	grid-template-columns: 1fr 1fr;
+	padding: 2vw;
+	justify-items: flex-start;
+}
+
+h2 {
+	font-weight: 700;
+	grid-column: span 2;
+}
+
+label,
+input {
+	display: block;
+	width: 100%;
+}
+
+label {
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: var(--create-account);
+}
+
+input {
+	width: 85%;
+	margin-top: 0.5vw;
+	padding: 5px;
+	border: 1px solid var(--input-border);
+	border-radius: 5px;
+	position: relative;
+}
+
+span {
+	position: relative;
+	display: block;
+}
+span::after {
+	content: attr(data-set);
+	position: absolute;
+	top: 5px;
+	left: 0px;
+	text-transform: none;
+	color: rgb(255, 0, 0);
+}
+
+input:hover {
+	border: 1px solid var(--create-account);
+}
+
+input:focus {
+	outline: 1px solid rgb(77, 77, 241);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+input:focus:invalid {
+	outline: 1px solid rgb(241, 77, 77);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+#inputs p {
+	grid-column: span 2;
+	font-size: 0.7rem;
+	justify-self: end;
+}
+
+form > div {
+	background: #fff;
+}
+
+form button,
+form p {
+	margin: 2vw 2vw 0 2vw;
+}
+
+form p {
+	margin-top: 1vw;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+form p a {
+	text-decoration: none;
+	color: var(--create-account);
+}
+
+form button {
+	background-color: var(--create-account);
+	border: none;
+	border-radius: 5px;
+	padding: 0.5vw 2vw;
+	color: var(--input-border);
+	font-weight: bold;
+}
+
+form button:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------ */
+
+/* left side part CSS */
+aside {
+	color: #fff;
+	background: center / cover url(./assets/photo-1585202900225-6d3ac20a6962.jfif) no-repeat;
+	display: grid;
+}
+
+#logo {
+	width: 100%;
+	height: 15%;
+	align-self: start;
+	margin-top: 10rem;
+	display: flex;
+	align-items: center;
+	font-family: Norse-Bold;
+	font-size: 3rem;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#logo img {
+	width: auto;
+	height: 75%;
+	margin-right: 1rem;
+}
+
+#credit {
+	color: #fff;
+	font-size: 0.7rem;
+	text-decoration: none;
+	align-self: flex-end;
+	justify-self: center;
+	margin-bottom: 10px;
+}
+#credit a {
+	color: #fff;
+	font-weight: 100;
+}
+
+/* ------------------------ */

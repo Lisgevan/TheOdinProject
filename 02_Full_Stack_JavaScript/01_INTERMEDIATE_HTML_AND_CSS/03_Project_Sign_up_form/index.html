@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign up</title>
+        <link rel="stylesheet" href="./reset.css">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <aside>
+                <div id="logo">
+                    <img src="./assets/odin-lined.png" alt="the odin project logo">
+                    <p>ODIN</p>
+                </div>
+                <p id="credit">Photo by <a href="https://unsplash.com/@haliewestphoto">Hallie West</a> on <a
+                       href="https://unsplash.com/">Unsplash</a></p>
+            </aside>
+            <main>
+                <div id="top">
+                    <p>This is not a real online service! You know you need somethinglike this in you life to help you
+                        realize your deepest dreams. Sign up now to get started.</p>
+                    <p>You know you want to</p>
+                </div>
+                <div id="middle">
+                    <form action="" novalidate>
+                        <div>
+                            <div id="inputs">
+                                <h2>Let's do this!</h2>
+                                <label for="firstName">First name *
+                                    <input type="text" name="firstName" id="firstName"
+                                           title="Please enter your first name."
+                                           required>
+                                    <span class='hide' data-set="Please enter your first name."></span>
+                                </label>
+                                <label for="lastName">Last name *
+                                    <input type="text" name="lastName" id="lastName"
+                                           title="Please enter your last name." required>
+                                    <span class='hide' data-set="Please enter your last name."></span>
+                                </label>
+                                <label for="email">Email *
+                                    <input type="email" name="email" id="email" title="Please enter your email."
+                                           required>
+                                    <span class='hide' data-set="Please enter a valid email."></span>
+                                </label>
+                                <label for="tel">Phone number *
+                                    <input type="tel" name="tel" id="tel" title="Please enter your tepephone."
+                                           required>
+                                    <span class='hide' data-set="Please enter a valid telephone."></span>
+                                </label>
+                                <label for="password">Password *
+                                    <input type="password" name="password" id="password"
+                                           title="Please enter a password." required>
+                                    <span class='hide' data-set="Please enter a valid password"></span>
+                                </label>
+                                <label for="confirmPassword"> Confirm password *
+                                    <input type="password" name="confirmPassword" id="confirmPassword"
+                                           title="Please enter your password again." required>
+                                    <span class='hide' data-set="Your passwords do not match."></span>
+                                </label>
+                                <p>All fields with * are mandatory.</p>
+                            </div>
+                        </div>
+
+                        <button type="button">Create Account</button>
+                        <p>Already have an account? <a href="#">Log in</a></p>
+                    </form>
+                </div>
+                <!-- <div id="bottom">
+                </div> -->
+            </main>
+        </div>
+
+        <script src="./scripts.js"></script>
+    </body>
+
+</html>
