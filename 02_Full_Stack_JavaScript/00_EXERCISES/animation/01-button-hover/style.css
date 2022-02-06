@@ -1,19 +1,55 @@
 #transition-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, sans-serif;
 }
 
 button {
-  border-radius: 8px;
-  border: none;
-  background-color: #2563eb;
-  color: white;
-  font-size: 18px;
-  padding: 16px 24px;
-  text-align: center;
+	border-radius: 8px;
+	border: none;
+	background-color: #2563eb;
+	color: white;
+	font-size: 18px;
+	padding: 16px 24px;
+	text-align: center;
+	animation: 1s makeSmall 1 alternate;
+	animation-fill-mode: forwards;
 }
+
+/* Solution with transition */
+
+button {
+	transition: transform 1s ease-in-out;
+}
+
+button:hover {
+	transform: scale(1.5);
+}
+
+/* Solution with animation (bug: scales to 1.5 and back to 1 onload) */
+/* button:hover {
+	animation: 1s makeBig 1 alternate;
+	animation-fill-mode: forwards;
+}
+
+@keyframes makeBig {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.5);
+	}
+}
+
+@keyframes makeSmall {
+	0% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+} */
