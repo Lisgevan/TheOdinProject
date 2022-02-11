@@ -1,1 +1,31 @@
+.mymenu {
+	background-color: rgb(20, 20, 68);
+	height: 400px;
+	width: 23%;
+	color: #e1f1ff;
+}
+.mymenu h2 {
+	color: #e9e791;
+	font-size: 25px;
+	font: weight 200em;
+	padding: 10px;
+}
 
+.mylist {
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: flex-start;
+	list-style-type: none;
+	padding-left: 0;
+	margin: 0;
+	list-style-position: inside;
+	line-height: 40px;
+}
+
+.hlist {
+	border-bottom: 1px solid #e1f1ff;
+	width: 100%;
+	padding-left: 10%;
+}
