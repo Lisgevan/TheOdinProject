@@ -1,0 +1,22 @@
+:root {
+	--vars: "var--";
+}
+
+body {
+	width: 75vw;
+	margin: auto;
+	display: grid;
+}
+
+h1,
+h1 + p {
+	text-align: center;
+}
+
+.card-footer div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.1rem;
+	justify-content: center;
+	align-content: center;
+}

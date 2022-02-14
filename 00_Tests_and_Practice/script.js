@@ -1,17 +1,31 @@
-const form = document.querySelector("form");
+let input = prompt("what do want to do in todo list");
 
-form.addEventListener("submit", e => {
-	e.preventDefault();
-	const quantity = document.querySelector("#qty");
-	const product = document.querySelector("#product");
+const list = ["bobo", "clean"];
 
-	const unorderedList = document.querySelector("#list");
+while (input !== "quit" && input !== "q") {
+	if (input === "list") {
+		console.log("***********");
 
-	const listItem = document.createElement("li");
+		for (let i = 0; i < list.length; i++) {
+			console.log(`${i}:${list[i]}`);
+		}
 
-	listItem.innerText = `${quantity.value} ${product.value}`;
+		console.log("************");
+		let input = prompt("what do want to do in todo list");
+	} else if (input === "new") {
+		const newtodo = prompt("ok,what is new to do?");
 
-	unorderedList.appendChild(listItem);
+		list.push(newtodo);
 
-	// input.value = "";
-});
+		console.log(`${newtodo} added to the list`);
+	} else if (input === "delete") {
+		let index = parseInt(prompt("enter index which you want to delete"));
+
+		const deleted = list.splice(index, 1);
+
+		console.log(`${deleted[0]}ok deleted from list`);
+	}
+
+	prompt("what do want to do in todo list?");
+}
+console.log("ok you quit the app");
