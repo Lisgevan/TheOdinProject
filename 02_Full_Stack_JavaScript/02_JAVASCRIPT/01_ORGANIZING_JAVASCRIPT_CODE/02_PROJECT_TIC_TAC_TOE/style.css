@@ -1,0 +1,54 @@
+:root {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: auto;
+	display: grid;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 2rem;
+	/* grid-template-columns: 1fr; */
+	grid-template-rows: repeat(auto);
+	/* grid-auto-flow: row; */
+}
+
+h1,
+p,
+.message {
+	text-align: center;
+}
+
+.board {
+	box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px 10px rgba(0, 0, 0, 0.2),
+		-5px 5px 10px 10px rgba(0, 0, 0, 0.2), 5px -5px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.board-btn {
+	width: 100px;
+	height: 100px;
+	padding: 0;
+	float: left;
+	font-size: 4rem;
+	font-weight: bold;
+	line-height: 4rem;
+	text-align: center;
+}
+
+.btn-noTop {
+	border-top: 0;
+}
+
+.btn-noBottom {
+	border-bottom: 0;
+}
+
+.btn-noRight {
+	border-right: 0;
+}
+
+.btn-noLeft {
+	border-left: 0;
+}
