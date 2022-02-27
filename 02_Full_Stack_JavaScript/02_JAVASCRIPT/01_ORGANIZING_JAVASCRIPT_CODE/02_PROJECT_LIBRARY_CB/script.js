@@ -11,15 +11,6 @@ let myLibrary = [];
 // obj = JSON.parse(localStorage.object);
 // console.log(JSON.parse(localStorage.bookList));
 
-// check the index of the object
-// console.log(
-// myLibrary.indexOf(
-// 	myLibrary.filter(obj => {
-// 		return obj.id === 4;
-// 	})[0]
-// )
-// );
-
 //// Random hex color
 //// const randomColor = () => Math.floor(Math.random() * 16777215).toString(16);
 // Random hex light color
@@ -45,7 +36,6 @@ class Book {
 class HandleBooks {
 	constructor(book) {
 		this.book = book;
-		this.handleReadStatus.bind(this);
 	}
 
 	handleReadStatus() {
