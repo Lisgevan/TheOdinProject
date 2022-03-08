@@ -1,0 +1,26 @@
+{
+	"name": "projet_restaurant_page",
+	"version": "1.0.0",
+	"description": "Project: Restaurant page, from The Odin Project courses",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"watch": "webpack --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Lisgevan/TheOdinProject/tree/main/02_Full_Stack_JavaScript/02_JAVASCRIPT/01_ORGANIZING_JAVASCRIPT_CODE/05_PROJECT_RESTAURANT_PAGE"
+	},
+	"author": "Lisgevan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Lisgevan/TheOdinProject/issues"
+	},
+	"homepage": "https://github.com/Lisgevan/TheOdinProject/tree/main#readme",
+	"keywords": [],
+	"devDependencies": {
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2"
+	}
+}
