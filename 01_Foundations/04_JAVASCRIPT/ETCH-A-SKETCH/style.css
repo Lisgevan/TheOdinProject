@@ -1,0 +1,172 @@
+body {
+	background-color: #add8e6;
+}
+
+h1 {
+	margin: 0 auto;
+	margin-bottom: 0.2em;
+	font-size: 4em;
+}
+
+.main {
+	align-items: center;
+	justify-items: center;
+}
+
+/* range input css */
+#boxNum {
+	border-radius: 8px;
+	height: 20px;
+	width: 300px;
+	outline: black solid 2px;
+	-webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	width: 30px;
+	-webkit-appearance: none;
+	height: 30px;
+	background: #000000;
+	border-radius: 50%;
+}
+
+#gridSetter {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	font-weight: 600;
+	line-height: 1.5em;
+	font-size: 2em;
+}
+/* ----------------- */
+
+/* Grid box CSS */
+#containerBox {
+	border: 5px solid #000000;
+	border-radius: 10px;
+	box-shadow: 5px 5px 50px 10px #424242;
+	width: 60vh;
+	height: 60vh;
+	padding: 0px;
+	margin-left: 150px;
+	overflow: hidden;
+	margin-top: 2em;
+	background-color: #ffffff;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	margin: 0px;
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+.cell {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0px;
+}
+/* ----------------- */
+
+/* Color setting CSS */
+#colorSelectors {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* margin-top: 2em; */
+	display: flex;
+}
+
+form {
+	margin-bottom: 20px;
+	margin-left: 20px;
+	/* margin-right: 10px; */
+	text-align: center;
+	font-weight: 600;
+}
+
+form label {
+	display: block;
+}
+
+#colorPick {
+	padding: 5px;
+	height: 50px;
+}
+
+form .controls {
+	background-color: #ffebcd;
+	padding: 10px;
+	width: 150px;
+	border: 2px solid #000000;
+	border-radius: 20px;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+form button {
+	background-color: #ffebcd;
+	padding: 10px;
+	width: 150px;
+	border: 2px solid #000000;
+	border-radius: 20px;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+/* ----------------- */
+.pffff {
+	display: none;
+}
+.message {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	h1 {
+		font-size: 3em;
+	}
+	.main {
+		flex-direction: column;
+	}
+	#containerBox {
+		margin: 30px auto;
+	}
+	.pffff {
+		display: none;
+	}
+	.message {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.container {
+		display: none;
+	}
+	.message {
+		display: block;
+		font-weight: 700;
+		font-size: 3em;
+	}
+	.pffff {
+		display: none;
+	}
+}
+@media only screen and (max-width: 100px) {
+	.container {
+		display: none;
+	}
+	.message {
+		display: none;
+	}
+	.pffff {
+		display: block;
+		font-weight: 700;
+		font-size: 3em;
+		writing-mode: vertical-rl;
+		text-orientation: upright;
+	}
+}

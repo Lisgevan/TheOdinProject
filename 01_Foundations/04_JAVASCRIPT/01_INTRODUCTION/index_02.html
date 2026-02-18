@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javscript Function Basics</title>
+  </head>
+
+  <body>
+    <script>
+      console.log( "Exercise 01" )
+      function add7( num ) {
+        return num + 7;
+      }
+      console.log( add7( 10 ) )
+      console.log( "---------------------------------" )
+
+      console.log( "Exercise 02" )
+      function multiply( num1, num2 ) {
+        return num1 * num2;
+      }
+      console.log( multiply( 3, 2 ) )
+      console.log( "---------------------------------" )
+
+      console.log( "Exercise 03" )
+      function capitalize( string ) {
+        return string[ 0 ].toUpperCase() + string.toLowerCase().slice( 1 )
+      }
+      console.log( capitalize( "abcd" ) )
+      console.log( capitalize( "ABCD" ) )
+      console.log( capitalize( "AbCd" ) )
+      console.log( capitalize( "aBcD" ) )
+      console.log( "---------------------------------" )
+
+      console.log( "Exercise 04" )
+      function lastLetter( string ) {
+        return string.slice( -1 )
+      }
+      console.log( lastLetter( "abcd" ) )
+      console.log( "---------------------------------" )
+
+    </script>
+  </body>
+
+</html>
