@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	text-align: center;
+}
+
+.container div {
+	padding: 15px;
+	font-size: 32px;
+	font-family: Helvetica;
+	font-weight: bold;
+	color: white;
+}
+
+.header {
+	background-color: #393f4d;
+}
+
+.menu ul,
+.menu li {
+	font-size: 16px;
+}
+
+.sidebar {
+	background-color: #c50208;
+}
+
+.sidebar .photo {
+	background-color: white;
+	color: black;
+	font-size: 12px;
+	font-weight: normal;
+	border-radius: 10px;
+}
+
+.sidebar .side-content {
+	background-color: white;
+	color: black;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.nav {
+	background-color: #c50208;
+}
+
+.nav ul li {
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.article {
+	background-color: #bccbde;
+}
+
+.article p {
+	font-size: 18px;
+	font-family: sans-serif;
+	color: white;
+	text-align: left;
+}
+
+.article .card {
+	background-color: #ffffff;
+	color: black;
+	text-align: center;
+}
+
+.card p {
+	color: black;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.card .title {
+	font-size: 18px;
+	text-align: center;
+}
+
+.footer {
+	background-color: #393f4d;
+}
+
+.footer p {
+	font-size: 13px;
+	font-weight: normal;
+}
+
+/* Solution */
+
+.container {
+	display: grid;
+	grid-template: repeat(4, max-content) / 1fr 4fr;
+	gap: 4px;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: max-content 4fr;
+	grid-column: 1 / -1;
+	align-content: center;
+	justify-content: center;
+	height: fit-content;
+}
+
+.menu {
+	margin: auto 0;
+}
+
+.menu ul {
+	display: grid;
+	grid-template: 1fr / repeat(4, 1fr);
+	align-content: center;
+	justify-content: center;
+}
+
+li {
+	align-self: center;
+	justify-self: center;
+}
+
+.sidebar {
+	display: grid;
+	grid-template: repeat(4, 1fr) / 1fr;
+	gap: 50px;
+	grid-column: 1;
+	grid-row: 2 / -2;
+	align-content: center;
+	justify-content: center;
+}
+
+.sidebar div {
+	align-content: center;
+}
+
+.nav ul {
+	display: grid;
+	grid-template: 1fr / repeat(3, 1fr);
+	grid-column: 2;
+	grid-row: 2 / span 1;
+}
+
+.article {
+	grid-column: 2 / -1;
+	grid-row: 3 / span 1;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 15px;
+}
+
+.card {
+	height: 200px;
+}
+
+.footer {
+	grid-column: 1 / -1;
+}
+
+li {
+	list-style: none;
+}
+
