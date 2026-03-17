@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./style.css">
+
+        <title>PROJECT: LIBRARY</title>
+    </head>
+
+    <body>
+
+        <h1>My Library Book List!</h1>
+        <p>A list of all books I own!</p>
+        <!-- <button class="btn btn-primary d-block my-3 p-3">Add a new book</button> -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary mb-4 fs-1 js-newBookButton" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            Add a new book
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="" class="js-modalForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New book</h5>
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" id="bookName">Book title: <br> (required)</label>
+                                <input type="text" class="form-control" placeholder="Book name"
+                                       aria-label="Book title"
+                                       aria-describedby="bookName" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="authorName">Author: <br> (required)</span>
+                                <input type="text" class="form-control" placeholder="Author's first and last name"
+                                       aria-label="Author name"
+                                       aria-describedby="authorName" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="pagesNum">Number of pages</span>
+                                <input type="number" class="form-control" placeholder="Number of book's pages"
+                                       aria-label="Number of pages"
+                                       aria-describedby="pagesNum">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="inputGroupFile02" disabled>
+                                <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-text">Description <br> (required)</span>
+                                <textarea class="form-control js-formTextarea" aria-label="With textarea"
+                                          required></textarea>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary js-resetButton"
+                                data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary js-saveNewBookButton" data-bs-dismiss="modal">Save
+                            book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cards with books -->
+
+        <!-- “NEW BOOK” button -->
+        <!-- “Delete book” button -->
+        <!-- “Read status” button -->
+
+        <template>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://dummyimage.com/500x500/b006b0/000000&text=Book Image goes here"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Book title here</h5> -->
+                        <figure class="text-start">
+                            <blockquote class="blockquote">
+                                <p class="js-cardTitle">Book title here</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                By <cite title="Source Title" class="js-authorName">Author</cite>
+                                <p>(<span class="js-bookPages">321</span> pages)</p>
+                            </figcaption>
+                        </figure>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu rutrum
+                            ante, sed accumsan libero.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-muted text-center js-readStatusMsg">I haven't read the book</p>
+                        <p class="text-muted text-center js-unreadStatusMsg" hidden>I read the book</p>
+                        <div class="btn-group d-flex flex-column align-content-stretch" role="group"
+                             aria-label="Basic mixed styles example">
+                            <div class="d-flex flex-column align-content-stretch">
+                                <button type="button" class="btn btn-success js-readButton">Read</button>
+                                <button type="button" class="btn btn-danger js-unreadButton" hidden>Unread</button>
+                            </div>
+                            <button type="button" class="btn btn-warning js-deleteButton">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4  js-cardContainer">
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>

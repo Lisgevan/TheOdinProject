@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./style.css">
+
+        <title>PROJECT: LIBRARY</title>
+    </head>
+
+    <body>
+
+        <h1>My Library Book List!</h1>
+        <p>A list of all books I own!</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary mb-4 fs-1 js-newBookButton" data-bs-toggle="modal"
+                data-bs-target="#addBookForm">
+            Add a new book
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addBookForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="" class="js-modalForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New book</h5>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" id="bookName">Book title: <br> (required)</label>
+                                <input type="text" class="form-control" placeholder="Book name"
+                                       aria-label="Book title" aria-describedby="bookName" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="authorName">Author: <br> (required)</span>
+                                <input type="text" class="form-control" placeholder="Author's first and last name"
+                                       aria-label="Author name" aria-describedby="authorName" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="pagesNum">Number of pages</span>
+                                <input type="number" class="form-control" placeholder="Number of book's pages"
+                                       aria-label="Number of pages" aria-describedby="pagesNum">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="inputGroupFile02" disabled>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-text">Description <br> (required)</span>
+                                <textarea class="form-control js-formTextarea" aria-label="With textarea"
+                                          required></textarea>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary js-resetButton"
+                                data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary js-saveNewBookButton" data-bs-dismiss="modal">Save
+                            book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4  js-cardContainer">
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>
